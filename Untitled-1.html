@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM BIẾT ANH MUỐN NÓI ĐIỀU GÌ KHÔNG HẢ?</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        #mainLabel {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .button {
+            background-color: pink;
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button:hover {
+            background-color: pink;
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainLabel">CƯỜNG CÓ ĐIỀU MUỐN NÓI VỚI DỨA:> !</div>
+    <button class="button" id="btn">ẤN VÀO ĐÂY ĐI</button>
+
+    <script>
+        // Hàm tạo cửa sổ mới
+        function openNewWindow() {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            
+            const x = Math.floor(Math.random() * (screenWidth - 300));
+            const y = Math.floor(Math.random() * (screenHeight - 100));
+            
+            // Tạo cửa sổ mới
+            const newWindow = document.createElement("div");
+            newWindow.style.position = "absolute";
+            newWindow.style.top = `${y}px`;
+            newWindow.style.left = `${x}px`;
+            newWindow.style.width = "300px";
+            newWindow.style.height = "100px";
+            newWindow.style.backgroundColor = "pink";
+            newWindow.style.display = "flex";
+            newWindow.style.justifyContent = "center";
+            newWindow.style.alignItems = "center";
+            newWindow.style.fontSize = "14px";
+            newWindow.style.fontWeight = "bold";
+            newWindow.style.color = "black";
+            newWindow.innerText = "~~Nhớ Dứa Quãiiii~~";
+            
+            document.body.appendChild(newWindow);
+            
+            // Sau 600ms tạo thêm cửa sổ mới
+            setTimeout(openNewWindow, 60);
+        }
+
+        // Gắn sự kiện cho nút
+        const button = document.getElementById("btn");
+        button.addEventListener("click", openNewWindow);
+    </script>
+</body>
+</html>
